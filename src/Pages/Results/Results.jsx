@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import LayOut from "../../Components/LayOut/LayOut";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -39,7 +39,7 @@ function Results() {
             <div className={classes.products__container}>
               {results?.map((product) => (
                 <ProductCard
-                  Key={product.id}
+                  key={product.id}
                   product={product}
                   renderDesc={false}
                   renderAdd={true}
