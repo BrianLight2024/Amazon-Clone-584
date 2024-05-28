@@ -80,3 +80,8 @@
 .login__registerButton:hover {
   background-color: lightgray;
 }
+
+.login__error {
+  color: red;
+  padding-top: 5px;
+}
