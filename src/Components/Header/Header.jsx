@@ -6,9 +6,10 @@ import classes from "./Header.module.css";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
+import { auth } from "../../Utility/firebase";
 
 const Header = () => {
-  const [{ basket }] = useContext(DataContext);
+  const [{ basket, user }] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -32,7 +33,7 @@ const Header = () => {
               </span>
               <div>
                 <p>Delivered to</p>
-                <span>Florida</span>
+                <span>Las Vegas</span>
               </div>
             </div>
           </div>
@@ -42,7 +43,7 @@ const Header = () => {
               <option value="">All</option>
             </select>
             <input type="text" placeholder="Search product" />
-            <BsSearch size={25} />
+            <BsSearch size={38} />
           </div>
 
           {/* right side link */}
@@ -59,9 +60,20 @@ const Header = () => {
               </select>
             </Link>
             {/*three components  */}
-            <Link to="">
-              <p>Sign In</p>
-              <span>Account & Lists</span>
+            <Link to={!user && "/auth"}>
+              <div>
+                {user ? (
+                  <>
+                    <p>Hello! {user?.email?.split("@")[0]}</p>
+                    <span onClick={() => auth.signOut()}>SignOut</span>
+                  </>
+                ) : (
+                  <>
+                    <p>Sign In</p>
+                    <span>Account & Lists</span>
+                  </>
+                )}
+              </div>
             </Link>
             <Link to="/orders">
               <p>Returns</p>
