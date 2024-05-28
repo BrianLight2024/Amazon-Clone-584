@@ -1,4 +1,4 @@
-import   { useContext } from "react";
+import { useContext } from "react";
 import { BsSearch } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
 import { BiCart } from "react-icons/bi";
@@ -9,10 +9,9 @@ import { DataContext } from "../DataProvider/DataProvider";
 
 const Header = () => {
   const [{ basket }] = useContext(DataContext);
-  const totalItem = basket?.reduce((amount, item)=>{
-    return item.amount + amount 
-  },0)
-  // console.log(basket.length);
+  const totalItem = basket?.reduce((amount, item) => {
+    return item.amount + amount;
+  }, 0);
 
   return (
     <section className={classes.fixed}>
