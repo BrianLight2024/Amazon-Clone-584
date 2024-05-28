@@ -1,14 +1,14 @@
-import React from 'react'
-import Header from '../Header/Header'
+/* eslint-disable react/prop-types */
+import Header from "../Header/Header";
 
-function LayOut({children}) {
+function LayOut({ children }) {
   return (
     <div>
-      <Header/>
-      
+      <Header />
+
       {children}
     </div>
-  )
+  );
 }
 
-export default LayOut
+export default LayOut;
