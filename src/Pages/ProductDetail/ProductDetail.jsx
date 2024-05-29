@@ -8,7 +8,7 @@ import ProductCard from "../../Components/Product/ProductCard";
 import Loader from "../../Components/Loader/Loader";
 
 function ProductDetail() {
-  const [product, setproduct] = useState({});
+  const [product, setProduct] = useState({});
   const [isLoading, setLoading] = useState(false);
   const { productId } = useParams();
 
@@ -17,14 +17,14 @@ function ProductDetail() {
     axios
       .get(`${productUrl}/products/${productId}`)
       .then((res) => {
-        setproduct(res.data);
+        setProduct(res.data);
         setLoading(false);
       })
       .catch((err) => {
         console.error(err);
         setLoading(false);
       });
-  });
+  }, [productId]);
 
   return (
     <LayOut>
