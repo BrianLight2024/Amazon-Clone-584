@@ -62,16 +62,16 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
 // Define the prop type
 ProductCard.propTypes = {
   product: PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    image: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    image: PropTypes.string,
+    title: PropTypes.string,
     rating: PropTypes.shape({
       rate: PropTypes.number,
       count: PropTypes.number,
     }),
-    price: PropTypes.number.isRequired,
+    price: PropTypes.number,
     description: PropTypes.string,
-  }).isRequired,
+  }),
   flex: PropTypes.bool,
   renderDesc: PropTypes.bool,
   renderAdd: PropTypes.bool,
