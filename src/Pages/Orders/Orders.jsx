@@ -37,13 +37,15 @@ function Orders() {
           )}
           {/* Ordered items */}
           <div>
-            {orders?.map((eachOrder) => {
+            {orders?.map((eachOrder, index) => {
               return (
-                <div key={eachOrder?.id}>
+                <div key={index}>
                   <hr />
                   <p>Order ID:{eachOrder?.id} </p>
                   {eachOrder?.data?.basket?.map((order) => {
-                    <ProductCard flex={true} product={order} key={order.id} />;
+                    return (
+                      <ProductCard flex={true} product={order} key={order.id} />
+                    );
                   })}
                 </div>
               );
