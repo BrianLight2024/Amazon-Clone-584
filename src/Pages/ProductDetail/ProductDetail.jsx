@@ -9,21 +9,20 @@ import Loader from "../../Components/Loader/Loader";
 
 function ProductDetail() {
   const [product, setproduct] = useState({});
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const { productId } = useParams();
 
   useEffect(() => {
-    setisLoading(true);
+    setLoading(true);
     axios
       .get(`${productUrl}/products/${productId}`)
       .then((res) => {
         setproduct(res.data);
-        setisLoading(false);
-        // console.log(res.data);
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
-        setisLoading(false);
+        console.error(err);
+        setLoading(false);
       });
   }, []);
 

@@ -7,6 +7,6 @@ const CurrencyFormat = ({ amount }) => {
 };
 
 CurrencyFormat.propTypes = {
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.number,
 };
 export default CurrencyFormat;

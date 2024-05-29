@@ -11,7 +11,6 @@ export const reducer = (state, action) => {
       const existingItem = state.basket.find(
         (item) => item.id === action.item.id
       );
-      console.log(existingItem);
 
       if (!existingItem) {
         return {
@@ -53,8 +52,8 @@ export const reducer = (state, action) => {
       break;
     }
 
-    case Type.SET_USER:{
-      return { ...state , user: action.user}
+    case Type.SET_USER: {
+      return { ...state, user: action.user };
     }
     default:
       return state;

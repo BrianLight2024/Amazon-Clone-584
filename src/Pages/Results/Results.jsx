@@ -10,19 +10,18 @@ import Loader from "../../Components/Loader/Loader";
 function Results() {
   const { categoryName } = useParams();
   const [results, setResults] = useState([]);
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     axios
       .get(`${productUrl}/products/category/${categoryName}`)
       .then((res) => {
         setResults(res.data);
-        setisLoading(false);
-        console.log(res.data);
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
-        setisLoading(false);
+        console.error(err);
+        setLoading(false);
       });
   }, [categoryName]);
 
