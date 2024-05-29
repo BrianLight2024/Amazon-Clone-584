@@ -1,6 +1,4 @@
 import { createContext, useReducer } from "react";
-// eslint-disable-next-line no-unused-vars
-import { initialState } from "../../Utility/Reducer";
 import PropTypes from "prop-types";
 
 export const DataContext = createContext();

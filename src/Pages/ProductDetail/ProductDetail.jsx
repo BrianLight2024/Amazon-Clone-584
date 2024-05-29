@@ -24,7 +24,7 @@ function ProductDetail() {
         console.error(err);
         setLoading(false);
       });
-  }, []);
+  });
 
   return (
     <LayOut>

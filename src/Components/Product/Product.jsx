@@ -19,7 +19,7 @@ function Product() {
         console.error(err);
         setLoading(false);
       });
-  }, []);
+  });
 
   return (
     <>
