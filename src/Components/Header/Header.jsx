@@ -61,7 +61,7 @@ const Header = () => {
             </Link>
             {/*three components  */}
             <Link to={!user && "/auth"}>
-              <div>
+              <div className={classes.cursor}>
                 {user ? (
                   <>
                     <p>Hello! {user?.email?.split("@")[0]}</p>
