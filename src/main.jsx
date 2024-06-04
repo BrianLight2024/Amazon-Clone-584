@@ -8,7 +8,7 @@ import { initialState, reducer } from "./Utility/Reducer.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Amazon-Clone-584/">
+    <BrowserRouter basename="/amazon-clone-584.netlify.app/">
       <DataProvider reducer={reducer} initialState={initialState}>
         <App />
       </DataProvider>

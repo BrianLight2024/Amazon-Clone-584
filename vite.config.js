@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/Amazon-Clone-584/",
+  base: "/amazon-clone-584.netlify.app/",
   plugins: [react()],
   server: {
     port: 3000, // You can set the port for the dev server here
